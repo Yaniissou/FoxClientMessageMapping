@@ -32,9 +32,8 @@ public class MessageController {
     }
 
     @PostMapping
-    @RequestMapping
     public void putMessage(@RequestParam String message) throws IOException {
-        final String filePath = System.getenv().getOrDefault("FILE_PATH", "/app/resources/messages.txt");
+        final String filePath = System.getenv().getOrDefault("FILE_PATH", "/app/messages.txt");
         final BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filePath, true));
 
 
