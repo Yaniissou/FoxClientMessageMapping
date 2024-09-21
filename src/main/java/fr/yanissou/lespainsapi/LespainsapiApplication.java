@@ -12,7 +12,7 @@ public class LespainsapiApplication {
         SpringApplication.run(LespainsapiApplication.class, args);
 
         //Create file if it doesn't exist
-        File file = new File(System.getenv().getOrDefault("FILE_PATH", "/app/resources/messages.txt"));
+        File file = new File(System.getenv().getOrDefault("FILE_PATH", "/app/messages.txt"));
         if (!file.exists()) {
             try {
                 file.createNewFile();
