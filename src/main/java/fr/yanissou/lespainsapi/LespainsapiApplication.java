@@ -2,6 +2,8 @@ package fr.yanissou.lespainsapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.File;
 
@@ -28,4 +30,8 @@ public class LespainsapiApplication {
         }
     }
 
+    @GetMapping("/hello")
+    public String hello() {
+        return "Hello World!";
+    }
 }
