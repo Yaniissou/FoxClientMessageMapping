@@ -22,7 +22,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build JAR with Gradle
-        run: mvn clean packag
+        run: mvn clean package
 
       - name: Find JAR file
         id: find-jar
