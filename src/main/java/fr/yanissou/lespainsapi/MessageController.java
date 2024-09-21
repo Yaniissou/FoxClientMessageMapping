@@ -13,7 +13,7 @@ public class MessageController {
 
     @GetMapping
     public String getMessage() throws IOException {
-        final String filePath = System.getenv().getOrDefault("FILE_PATH", "/app/resources/messages.txt");
+        final String filePath = System.getenv().getOrDefault("FILE_PATH", "/app/messages.txt");
         final List<String> list = new ArrayList<>();
         final BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath));
 
