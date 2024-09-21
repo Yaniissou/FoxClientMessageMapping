@@ -29,9 +29,4 @@ public class LespainsapiApplication {
             }
         }
     }
-
-    @GetMapping("/hello")
-    public String hello() {
-        return "Hello World!";
-    }
 }
