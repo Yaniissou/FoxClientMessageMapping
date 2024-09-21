@@ -13,6 +13,12 @@ public class LespainsapiApplication {
 
         //Create file if it doesn't exist
         File file = new File(System.getenv().getOrDefault("FILE_PATH", "/app/messages.txt"));
+
+        File parentDir = file.getParentFile();
+        if (!parentDir.exists()) {
+            parentDir.mkdirs();  // Créer les répertoires si nécessaire
+        }
+
         if (!file.exists()) {
             try {
                 file.createNewFile();
