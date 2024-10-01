@@ -43,18 +43,17 @@ public class MessageController {
     }
 
     @GetMapping("/list")
-    public String list() throws IOException {
+    public List<String> list() throws IOException {
         final String filePath = System.getenv().getOrDefault("FILE_PATH", "/app/messages.txt");
         final BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath));
-
-        final StringBuilder stringBuilder = new StringBuilder();
+        final List<String> messageList = new ArrayList<>();
         String s;
 
         while ((s = bufferedReader.readLine()) != null) {
-            stringBuilder.append(s).append("<br>");
+            messageList.add(s);
         }
 
         bufferedReader.close();
-        return stringBuilder.toString();
+        return messageList;
     }
 }
