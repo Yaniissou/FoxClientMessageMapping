@@ -9,10 +9,9 @@ import java.util.Random;
 
 @RestController
 @RequestMapping("/messages")
-@CrossOrigin(origins = {"http://message.yanissou.ovh", "localhost:63342"},
-        methods = {RequestMethod.GET, RequestMethod.POST})
 public class MessageController {
 
+    @CrossOrigin(origins = "http://message.yanissou.ovh")
     @GetMapping
     public String getMessage() throws IOException {
         final String filePath = System.getenv().getOrDefault("FILE_PATH", "/app/messages.txt");
@@ -33,6 +32,7 @@ public class MessageController {
         return list.get(new Random().nextInt(list.size()));
     }
 
+    @CrossOrigin(origins = "http://message.yanissou.ovh")
     @PostMapping
     public void putMessage(@RequestParam String message) throws IOException {
         final String filePath = System.getenv().getOrDefault("FILE_PATH", "/app/messages.txt");
@@ -44,6 +44,7 @@ public class MessageController {
         bufferedWriter.close();
     }
 
+    @CrossOrigin(origins = "http://message.yanissou.ovh")
     @GetMapping("/list")
     public List<String> list() throws IOException {
         final String filePath = System.getenv().getOrDefault("FILE_PATH", "/app/messages.txt");
