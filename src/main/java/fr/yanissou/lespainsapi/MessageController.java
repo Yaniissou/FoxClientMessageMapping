@@ -9,7 +9,8 @@ import java.util.Random;
 
 @RestController
 @RequestMapping("/messages")
-@CrossOrigin(origins = "http://message.yanissou.ovh")
+@CrossOrigin(origins = {"http://message.yanissou.ovh", "localhost:63342"},
+        methods = {RequestMethod.GET, RequestMethod.POST})
 public class MessageController {
 
     @GetMapping
